@@ -1,0 +1,227 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Button } from "./ui/button";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+interface GinNavbarProps {
+  user?: { email?: string } | null;
+}
+
+export default function GinNavbar({ user }: GinNavbarProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: "#who-we-are", label: "Who We Are" },
+    { href: "#what-we-do", label: "What We Do" },
+    { href: "#partner", label: "Partner With Us" },
+    { href: "#contact", label: "Contact" },
+  ];
+
+  const programs = [
+    { href: "#afa", label: "Acting for Film Academy Program" },
+    { href: "#programs", label: "Other Programs" },
+  ];
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-20">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Global Investment Network"
+              width={140}
+              height={50}
+              className="h-12 w-auto object-contain"
+              priority
+              unoptimized
+            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navItems.slice(0, 2).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-navy hover:text-gold transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* Programs Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsProgramsOpen(true)}
+              onMouseLeave={() => setIsProgramsOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-sm font-medium text-navy hover:text-gold transition-colors">
+                Programs
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    isProgramsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <AnimatePresence>
+                {isProgramsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-border py-2"
+                  >
+                    {programs.map((program) => (
+                      <Link
+                        key={program.href}
+                        href={program.href}
+                        className="block px-4 py-2 text-sm text-navy hover:bg-secondary hover:text-gold transition-colors"
+                      >
+                        {program.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {navItems.slice(2).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-navy hover:text-gold transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            {user ? (
+              <Link href="/dashboard">
+                <Button className="bg-navy hover:bg-navy/90 text-white">
+                  Dashboard
+                </Button>
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/sign-in"
+                  className="text-sm font-medium text-navy hover:text-gold transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link href="/apply">
+                  <Button className="bg-navy hover:bg-navy/90 text-white active:scale-[0.98] transition-transform">
+                    Apply Now
+                  </Button>
+                </Link>
+              </>
+            )}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-navy"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed top-20 right-0 bottom-0 w-80 bg-white shadow-xl lg:hidden"
+          >
+            <div className="flex flex-col p-6 gap-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-lg font-medium text-navy hover:text-gold transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <div className="border-t border-border pt-4 mt-2">
+                <p className="text-sm text-muted-foreground mb-2">Programs</p>
+                {programs.map((program) => (
+                  <Link
+                    key={program.href}
+                    href={program.href}
+                    className="block text-navy hover:text-gold transition-colors py-2 pl-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {program.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col gap-3">
+                {user ? (
+                  <Link href="/dashboard">
+                    <Button className="w-full bg-navy hover:bg-navy/90 text-white">
+                      Dashboard
+                    </Button>
+                  </Link>
+                ) : (
+                  <>
+                    <Link href="/sign-in">
+                      <Button
+                        variant="outline"
+                        className="w-full border-navy text-navy"
+                      >
+                        Sign In
+                      </Button>
+                    </Link>
+                    <Link href="/apply">
+                      <Button className="w-full bg-navy hover:bg-navy/90 text-white">
+                        Apply Now
+                      </Button>
+                    </Link>
+                  </>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}
