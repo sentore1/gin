@@ -1,29 +1,29 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Palette, GraduationCap, Calendar, TrendingUp } from "lucide-react";
 
 const pillars = [
   {
-    icon: Palette,
+    image: "/programsimages/Creative Industries.jpg",
     title: "Creative Industries",
     description:
       "Nurturing talent in film, animation, photography, and graphic design to build the next generation of creative professionals.",
   },
   {
-    icon: GraduationCap,
+    image: "/programsimages/Education & Training.jpg",
     title: "Education & Training",
     description:
       "Comprehensive programs designed to equip students with practical skills and industry-relevant knowledge for career success.",
   },
   {
-    icon: Calendar,
+    image: "/programsimages/Events & Experiences.jpg",
     title: "Events & Experiences",
     description:
       "Curating impactful events that connect talent with opportunities and foster collaboration across industries.",
   },
   {
-    icon: TrendingUp,
+    image: "/programsimages/Investment & Growth.jpg",
     title: "Investment & Growth",
     description:
       "Strategic investments in promising ventures and talented individuals to drive sustainable economic development.",
@@ -60,21 +60,18 @@ export default function CorePillars() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="h-full bg-white rounded-xl p-8 shadow-[0_2px_8px_rgba(27,58,95,0.08)] hover:shadow-[0_8px_24px_rgba(27,58,95,0.12)] transition-all duration-300 hover:-translate-y-1">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="w-14 h-14 bg-navy/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors"
-                >
-                  <pillar.icon className="w-7 h-7 text-navy group-hover:text-gold transition-colors" />
-                </motion.div>
-
-                <h3 className="font-display text-xl font-bold text-navy mb-3">
-                  {pillar.title}
-                </h3>
-
-                <p className="text-[#5F6B7A] font-body leading-relaxed">
-                  {pillar.description}
-                </p>
+              <div className="h-full bg-white rounded-xl overflow-hidden shadow-[0_2px_8px_rgba(27,58,95,0.08)] hover:shadow-[0_8px_24px_rgba(27,58,95,0.12)] transition-all duration-300 hover:-translate-y-1">
+                <div className="relative h-48 w-full">
+                  <Image src={pillar.image} alt={pillar.title} fill className="object-cover" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-bold text-navy mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-[#5F6B7A] font-body leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -32,6 +32,7 @@ export default async function SignInPage({ searchParams }: LoginProps) {
               width={180}
               height={70}
               className="h-20 w-auto mx-auto"
+              unoptimized
             />
           </Link>
         </div>

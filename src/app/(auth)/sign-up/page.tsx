@@ -31,6 +31,7 @@ export default async function Signup(props: {
               width={180}
               height={70}
               className="h-20 w-auto mx-auto"
+              unoptimized
             />
           </Link>
         </div>
@@ -110,8 +111,6 @@ export default async function Signup(props: {
             </form>
           </UrlProvider>
         </div>
-
-        <SmtpMessage />
 
         <p className="text-center text-sm text-[#5F6B7A] mt-6">
           <Link href="/" className="hover:text-gold transition-colors">

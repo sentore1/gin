@@ -9,9 +9,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface GinNavbarProps {
   user?: { email?: string } | null;
+  alwaysLight?: boolean;
 }
 
-export default function GinNavbar({ user }: GinNavbarProps) {
+export default function GinNavbar({ user, alwaysLight = false }: GinNavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
@@ -25,21 +26,23 @@ export default function GinNavbar({ user }: GinNavbarProps) {
   }, []);
 
   const navItems = [
-    { href: "#who-we-are", label: "Who We Are" },
-    { href: "#what-we-do", label: "What We Do" },
-    { href: "#partner", label: "Partner With Us" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/programs", label: "Programs" },
+    { href: "/partnership", label: "Partnership" },
     { href: "#contact", label: "Contact" },
   ];
 
   const programs = [
-    { href: "#afa", label: "Acting for Film Academy Program" },
-    { href: "#programs", label: "Other Programs" },
+    { href: "/programs", label: "All Programs" },
+    { href: "#afa", label: "Acting for Film Academy" },
+    { href: "/apply", label: "Apply Now" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || alwaysLight
           ? "bg-white/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
@@ -53,7 +56,9 @@ export default function GinNavbar({ user }: GinNavbarProps) {
               alt="Global Investment Network"
               width={140}
               height={50}
-              className="h-12 w-auto object-contain"
+              className={`h-12 w-auto object-contain transition-all ${
+                isScrolled || alwaysLight ? "" : "brightness-0 invert"
+              }`}
               priority
               unoptimized
             />
@@ -65,7 +70,9 @@ export default function GinNavbar({ user }: GinNavbarProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-navy hover:text-gold transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  isScrolled || alwaysLight ? "text-navy hover:text-gold" : "text-white hover:text-gold"
+                }`}
               >
                 {item.label}
               </Link>
@@ -77,7 +84,9 @@ export default function GinNavbar({ user }: GinNavbarProps) {
               onMouseEnter={() => setIsProgramsOpen(true)}
               onMouseLeave={() => setIsProgramsOpen(false)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-navy hover:text-gold transition-colors">
+              <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                isScrolled || alwaysLight ? "text-navy hover:text-gold" : "text-white hover:text-gold"
+              }`}>
                 Programs
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
@@ -107,11 +116,13 @@ export default function GinNavbar({ user }: GinNavbarProps) {
               </AnimatePresence>
             </div>
 
-            {navItems.slice(2).map((item) => (
+            {navItems.slice(3).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-navy hover:text-gold transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  isScrolled || alwaysLight ? "text-navy hover:text-gold" : "text-white hover:text-gold"
+                }`}
               >
                 {item.label}
               </Link>
@@ -130,7 +141,9 @@ export default function GinNavbar({ user }: GinNavbarProps) {
               <>
                 <Link
                   href="/sign-in"
-                  className="text-sm font-medium text-navy hover:text-gold transition-colors"
+                  className={`text-sm font-medium transition-colors ${
+                    isScrolled || alwaysLight ? "text-navy hover:text-gold" : "text-white hover:text-gold"
+                  }`}
                 >
                   Sign In
                 </Link>
@@ -145,7 +158,9 @@ export default function GinNavbar({ user }: GinNavbarProps) {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-navy"
+            className={`lg:hidden ${
+              isScrolled || alwaysLight ? "text-navy" : "text-white"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (

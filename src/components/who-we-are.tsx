@@ -4,8 +4,26 @@ import { motion } from "framer-motion";
 
 export default function WhoWeAre() {
   return (
-    <section id="who-we-are" className="py-24 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-20">
+    <section id="who-we-are" className="relative py-24 lg:py-32 bg-white overflow-hidden">
+      {/* Decorative curved lines - Left */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-96 pointer-events-none">
+        <svg viewBox="0 0 200 400" className="w-full h-full">
+          <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2 }} viewport={{ once: true }} d="M 0,100 Q 100,120 100,200" stroke="#1B3A5F" strokeWidth="2" fill="none" opacity="0.3" />
+          <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.2 }} viewport={{ once: true }} d="M 0,150 Q 120,170 120,250" stroke="#1B3A5F" strokeWidth="2" fill="none" opacity="0.2" />
+          <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.4 }} viewport={{ once: true }} d="M 0,200 Q 140,220 140,300" stroke="#C5A572" strokeWidth="3" fill="none" opacity="0.4" />
+        </svg>
+      </div>
+
+      {/* Decorative curved lines - Right */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-96 pointer-events-none">
+        <svg viewBox="0 0 200 400" className="w-full h-full">
+          <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2 }} viewport={{ once: true }} d="M 200,100 Q 100,120 100,200" stroke="#1B3A5F" strokeWidth="2" fill="none" opacity="0.3" />
+          <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.2 }} viewport={{ once: true }} d="M 200,150 Q 80,170 80,250" stroke="#1B3A5F" strokeWidth="2" fill="none" opacity="0.2" />
+          <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2, delay: 0.4 }} viewport={{ once: true }} d="M 200,200 Q 60,220 60,300" stroke="#C5A572" strokeWidth="3" fill="none" opacity="0.4" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

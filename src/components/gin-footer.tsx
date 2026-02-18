@@ -6,8 +6,8 @@ export default function GinFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-navy text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-20 py-16">
+    <footer id="contact" className="bg-white text-navy">
+      <div className="max-w-7xl mx-auto px-6 lg:px-20 py-24">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -16,28 +16,29 @@ export default function GinFooter() {
               alt="Global Investment Network"
               width={160}
               height={60}
-              className="h-16 w-auto mb-6 brightness-0 invert"
+              className="h-16 w-auto mb-6"
+              unoptimized
             />
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
+            <p className="text-navy/70 text-sm leading-relaxed mb-6">
               Building impactful across creativity, education, and
               sustainable development.
             </p>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy transition-all"
+                className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy transition-all"
+                className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy transition-all"
+                className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -50,42 +51,42 @@ export default function GinFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#who-we-are"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  href="/about"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
-                  Who We Are
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#what-we-do"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  href="/services"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
-                  What We Do
+                  Services
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#afa"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  href="/programs"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
-                  Acting for Film Academy Program
+                  Programs
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#partner"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  href="/partnership"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
-                  Partner With Us
+                  Partnership
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/apply"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  href="/brand"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
-                  Apply Now
+                  Brand Governance
                 </Link>
               </li>
             </ul>
@@ -98,7 +99,7 @@ export default function GinFooter() {
               <li>
                 <Link
                   href="/apply"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   Acting for Film Academy Program
                 </Link>
@@ -106,7 +107,7 @@ export default function GinFooter() {
               <li>
                 <Link
                   href="/apply"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   Career Guidance & Internship
                 </Link>
@@ -114,7 +115,7 @@ export default function GinFooter() {
               <li>
                 <Link
                   href="/apply"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   Film Making & TV Production
                 </Link>
@@ -122,7 +123,7 @@ export default function GinFooter() {
               <li>
                 <Link
                   href="/apply"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   Animation & Motion Graphics
                 </Link>
@@ -130,7 +131,7 @@ export default function GinFooter() {
               <li>
                 <Link
                   href="/apply"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   Photography & Graphic Design
                 </Link>
@@ -144,15 +145,15 @@ export default function GinFooter() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-white/70">
-                  Kigali, Rwanda
+                <span className="text-navy/70">
+                  KN 4 Ave, Kigali, Rwanda
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold flex-shrink-0" />
                 <a
                   href="mailto:info@globallinne.com"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   info@globallinne.com
                 </a>
@@ -161,7 +162,7 @@ export default function GinFooter() {
                 <Phone className="w-5 h-5 text-gold flex-shrink-0" />
                 <a
                   href="tel:+250780000000"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-navy/70 hover:text-gold transition-colors"
                 >
                   +250 784 444 439
                 </a>
@@ -171,20 +172,20 @@ export default function GinFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/50 text-sm">
+        <div className="pt-8 border-t border-navy/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-navy/50 text-sm">
             © {currentYear} Global Investment Network. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link
               href="#"
-              className="text-white/50 hover:text-gold transition-colors"
+              className="text-navy/50 hover:text-gold transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="#"
-              className="text-white/50 hover:text-gold transition-colors"
+              className="text-navy/50 hover:text-gold transition-colors"
             >
               Terms of Service
             </Link>
