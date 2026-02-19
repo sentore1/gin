@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const pillars = [
   {
     image: "/programsimages/Creative Industries.jpg",
-    title: "Creative Industries",
+    title: "Creative Arts Industries",
     description:
       "Nurturing talent in film, animation, photography, and graphic design to build the next generation of creative professionals.",
   },
@@ -45,8 +45,8 @@ export default function CorePillars() {
             What We Do
           </h2>
           <p className="text-lg text-[#5F6B7A] max-w-2xl mx-auto font-body">
-            Our four core pillars work together to create a comprehensive
-            ecosystem for talent development and venture building.
+            GIN operates across three strategic sectors designed to drive 
+            transformative and sustainable growth.
           </p>
         </motion.div>
 

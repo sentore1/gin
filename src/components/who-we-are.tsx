@@ -51,9 +51,9 @@ export default function WhoWeAre() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl sm:text-2xl lg:text-3xl font-display text-[#1A1D29] leading-relaxed mb-8 px-8"
             >
-              Global Investment Network is a transformative platform dedicated
-              to building impactful ventures across creativity, education, and
-              sustainable development.
+              Global Investment Network GIN is a purpose-driven investment and development
+              company committed to integrating capital with strategy to mobilize sustainable
+              economic growth across high-impact sectors.
             </motion.blockquote>
           </div>
 
@@ -64,11 +64,10 @@ export default function WhoWeAre() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg text-[#5F6B7A] leading-relaxed max-w-3xl mx-auto font-body"
           >
-            We believe in the transformative power of innovation to drive lasting
-            change. By combining strategic investments and comprehensive education
-            with an emphasis on digital visibility, we empower our global network
-            to lead in a connected world. Together, we are redefining the landscape
-            of entrepreneurship and shaping the future of global talent development.
+           Operating at the intersection of finance, innovation, and sustainability
+           GIN strategically aligns capital with transformative opportunities in the
+           creative arts industry, education, market-driven skills development, and 
+           green economy initiatives. 
           </motion.p>
         </motion.div>
       </div>

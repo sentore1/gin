@@ -13,23 +13,23 @@ export default async function AboutPage() {
       <div className="pt-32 pb-20 px-6 lg:px-20 max-w-7xl mx-auto">
         <h1 className="font-display text-4xl lg:text-5xl font-bold text-navy mb-6">Who We Are</h1>
         <p className="text-lg text-navy/70 leading-relaxed mb-12">
-          Global Investment Network (GIN) is a strategic investment and production platform dedicated to transforming ideas into commercially viable and socially meaningful enterprises. We mobilize capital, structure opportunities, and provide expert advisory services that enable high-growth projects to move from concept to scale.
+          Global Investment Network (GIN) is a purpose-driven investment and development company integrating capital with strategic execution to mobilize sustainable economic growth.
         </p>
         <p className="text-lg text-navy/70 leading-relaxed mb-16">
-          Our model blends disciplined financial management, strategic partnerships, and market-driven execution to create sustainable value for investors, creators, and institutions.
+          Operating at the intersection of finance, innovation, and sustainability, GIN structures disciplined investment frameworks that unlock scalable opportunities across three core sectors: creative arts, education and market-oriented skills development, and green economy initiatives.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <h2 className="font-display text-2xl font-bold text-navy mb-4">Mission</h2>
             <p className="text-navy/70 leading-relaxed">
-              To invest in and venture innovative ideas that build sustainable impact across creative industries, education, environmental advocacy, and emerging markets.
+              To integrate capital with innovation and strategic partnerships in order to unlock scalable opportunities, bridge skills with global market demands, and drive measurable economic and social impact across high-growth sectors.
             </p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <h2 className="font-display text-2xl font-bold text-navy mb-4">Vision</h2>
             <p className="text-navy/70 leading-relaxed">
-              To become a trusted global venture platform recognized for building impactful, innovative, and sustainable ventures that shape the future of creative and development-driven industries.
+             To become a globally trusted investment and development platform that transforms industries, strengthens education systems, and advances sustainable economies through strategic capital integration.
             </p>
           </div>
         </div>

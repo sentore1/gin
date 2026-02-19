@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Facebook } from "lucide-react";
 
 export default function GinFooter() {
   const currentYear = new Date().getFullYear();
@@ -41,6 +41,12 @@ export default function GinFooter() {
                 className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all"
               >
                 <Instagram className="w-5 h-5" />
+              </a>
+               <a
+                href="#"
+                className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all"
+              >
+                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>

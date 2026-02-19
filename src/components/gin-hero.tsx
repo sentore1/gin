@@ -59,7 +59,7 @@ export default function GinHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center max-w-4xl mx-auto">
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-5 drop-shadow-lg">
-            Building Impactful Across <span className="text-gold drop-shadow-lg">Creativity</span>, <span className="text-gold drop-shadow-lg">Education</span> & <span className="text-gold drop-shadow-lg">Sustainable Development</span>
+            Integrating Capital. <span className="text-gold drop-shadow-lg">Mobilizing </span><span className="text-gold drop-shadow-lg">Sustainable Growth.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="text-sm sm:text-base text-white/95 mb-8 max-w-xl mx-auto leading-relaxed drop-shadow-md">
             Global Investment Network is dedicated to fostering innovation and talent development. Join us in creating opportunities that transform lives and communities across the globe.
