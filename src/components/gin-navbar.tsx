@@ -30,7 +30,7 @@ export default function GinNavbar({ user, alwaysLight = false }: GinNavbarProps)
     { href: "/services", label: "Services" },
     { href: "/programs", label: "Programs" },
     { href: "/partnership", label: "Partnership" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const programs = [

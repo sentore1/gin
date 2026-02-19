@@ -42,7 +42,7 @@ export default function FooterCTA() {
             </Button>
           </Link>
 
-          <Link href="#partner">
+          <Link href="/contact">
             <Button
               size="lg"
               variant="outline"
@@ -53,7 +53,7 @@ export default function FooterCTA() {
             </Button>
           </Link>
 
-          <Link href="#contact">
+          <Link href="/contact">
             <Button
               size="lg"
               variant="outline"

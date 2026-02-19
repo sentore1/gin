@@ -4,6 +4,7 @@ import { encodedRedirect } from "@/utils/utils";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "../../supabase/server";
+import nodemailer from "nodemailer";
 
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
@@ -161,4 +162,32 @@ export const signOutAction = async () => {
   const supabase = await createClient();
   await supabase.auth.signOut();
   return redirect("/sign-in");
+};
+
+export const contactFormAction = async (formData: FormData) => {
+  const name = formData.get("name")?.toString();
+  const email = formData.get("email")?.toString();
+  const subject = formData.get("subject")?.toString();
+  const message = formData.get("message")?.toString();
+
+  if (!name || !email || !subject || !message) {
+    return encodedRedirect("error", "/contact", "All fields are required");
+  }
+
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/send-email`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, subject, message }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to send email");
+    }
+
+    return encodedRedirect("success", "/contact", "Message sent successfully!");
+  } catch (error) {
+    console.error("Contact form error:", error);
+    return encodedRedirect("error", "/contact", "Failed to send message. Please try again.");
+  }
 };

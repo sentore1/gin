@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Film, Briefcase, Video, Wand2, Camera } from "lucide-react";
+import { ArrowRight, Film, Briefcase, Video, Wand2, Camera, TrendingUp, Handshake, Briefcase as BriefcaseIcon } from "lucide-react";
 import { Button } from "./ui/button";
 
 const programs = [
@@ -130,6 +130,33 @@ export default function AllPrograms() {
               </div>
             </motion.div>
           ))}
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: programs.length * 0.1 }}
+            className="h-full rounded-xl p-8 bg-navy flex flex-col justify-center gap-4"
+          >
+            <Link href="/contact" className="w-full">
+              <Button className="w-full bg-white text-navy hover:bg-white/90 font-medium">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Invest With Us
+              </Button>
+            </Link>
+            <Link href="/contact" className="w-full">
+              <Button className="w-full bg-white text-navy hover:bg-white/90 font-medium">
+                <Handshake className="w-4 h-4 mr-2" />
+                Partner with Us
+              </Button>
+            </Link>
+            <Link href="/contact" className="w-full">
+              <Button className="w-full bg-white text-navy hover:bg-white/90 font-medium">
+                <BriefcaseIcon className="w-4 h-4 mr-2" />
+                Explore Our Services
+              </Button>
+            </Link>
+          </motion.div>
         </div>
 
         <motion.div

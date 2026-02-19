@@ -70,7 +70,7 @@ export default async function PartnershipPage() {
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
             Join us in building impactful ventures that create lasting value across creative industries and sustainable development.
           </p>
-          <Link href="#contact">
+          <Link href="/contact">
             <Button className="bg-gold hover:bg-gold/90 text-navy font-semibold px-8 py-6 text-lg">
               Get in Touch
             </Button>
